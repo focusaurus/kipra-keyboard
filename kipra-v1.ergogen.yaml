@@ -3,7 +3,13 @@ metadata:
   author: Peter Lyons
   www: https://peterlyons.com
 units:
-  $default_spread: u
+  # choc spread is just a LITTLE too tight for me,
+  # so bump it up by 1mm
+  # This is by coincidence the same as "u" but "cx + 1"
+  # expresses the intent more clearly
+  $default_spread: cx + 1
+  # I definitely want minimal vertical padding though
+  # so "cy" here is choc y
   $default_padding: cy
 points:
   key:
