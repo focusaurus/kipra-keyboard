@@ -1,0 +1,77 @@
+points:
+  key:
+    padding: cy
+  zones:
+    fingers:
+      columns:
+        pinky:
+        ring.key:
+          stagger: 0.5cy
+          spread: u
+        middle.key:
+          stagger: 0.25cy
+          spread: u
+        index.key:
+          stagger: -0.25cy
+          spread: u
+      rows:
+        one:
+        two:
+        three:
+        four:
+    inner:
+      columns:
+        inner:
+      rows:
+        one:
+        two:
+        three:
+      anchor:
+        ref: fingers_index_one
+        shift:  [u, -0.15cy]
+    thumb:
+      anchor:
+        ref: inner_inner_one
+        shift: [0cx, -40]
+        rotate: -20
+      columns:
+        tuck:
+        home.key:
+          splay: -12
+          stagger: -2
+        reach.key:
+          splay: -12
+          stagger: -2
+pcbs:
+  kipra-v1:
+    footprints:
+      keys:
+        what: choc
+        where: true
+        params:
+          from: GND
+          to: "{{name}}"
+          hotswap: true
+          reverse: true
+          keycaps: true
+      mcu:
+        what: promicro
+        where:
+          - ref: inner_inner_three
+            shift: [1U, 0.5U]
+            rotate: -90
+        params:
+          orientation: up
+          designator: MCU
+      trrs:
+        what: trrs
+        where:
+          - ref: inner_inner_three
+            shift: [2cx, 2cx]
+            rotate: -90
+        params:
+          reverse: true
+          A: wtf
+          B: wtf
+          C: wtf
+          D: wtf
