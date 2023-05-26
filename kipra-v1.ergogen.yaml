@@ -1,50 +1,53 @@
+metadata:
+  version: 0.0.2
+  author: Peter Lyons
+  www: https://peterlyons.com
+units:
+  $default_spread: u
+  $default_padding: cy
 points:
   key:
-    padding: cy
     tags.1u: true
+    bind: [0,2,0,0]
   zones:
     fingers:
       columns:
         pinky:
-        ring.key:
-          stagger: 0.5cy
-          spread: u
-        middle.key:
-          stagger: 0.25cy
-          spread: u
-        index.key:
-          stagger: -0.25cy
-          spread: u
+        ring.key.stagger: 0.5cy
+        middle.key.stagger: 0.25cy
+        index.key.stagger: -0.25cy
+        inner.key.stagger: -0.15cy
+        inner.rows.four.skip: true
       rows:
         one:
         two:
         three:
         four:
-    inner:
-      columns:
-        inner:
-      rows:
-        one:
-        two:
-        three:
-      anchor:
-        ref: fingers_index_one
-        shift:  [u, -0.15cy]
     thumb:
       anchor:
-        ref: inner_inner_one
-        shift: [0cx, -40]
+        ref: fingers_inner_one
+        shift: [0, -40]
         rotate: -110
       columns:
         thumb:
           rows:
             one:
+              bind: [5, 5, 20, 25]
             two:
               rotate: -10
               shift: [1.8, 4]
+              bind:  [5,5,5,0]
             three:
               rotate: -10
               shift: [1.8, 4]
+              bind: [0,5,2,0]
+outlines:
+  outline:
+    main:
+      what: rectangle
+      where: true
+      size: cx
+      bound: true
 pcbs:
   kipra-v1:
     footprints:
@@ -60,7 +63,7 @@ pcbs:
       mcu:
         what: promicro
         where:
-          - ref: inner_inner_three
+          - ref: fingers_inner_three
             shift: [1U, 0.5U]
             rotate: -90
         params:
@@ -69,7 +72,7 @@ pcbs:
       trrs:
         what: trrs
         where:
-          - ref: inner_inner_three
+          - ref: fingers_inner_three
             shift: [2cx, 2cx]
             rotate: -90
         params:
@@ -78,3 +81,5 @@ pcbs:
           B: wtf
           C: wtf
           D: wtf
+
+preview: [main]
