@@ -22,8 +22,11 @@ points:
         ring.key.stagger: 0.5cy
         middle.key.stagger: 0.25cy
         index.key.stagger: -0.25cy
-        inner.key.stagger: -0.15cy
+        index.rows.one.bind: [0,1,24,0]
         inner.rows.four.skip: true
+        inner.key.stagger: -0.15cy
+        inner.rows.one.bind: [0,2,24,0]
+        inner.rows.three.bind: [19.5,2,0,0]
       rows:
         one:
         two:
@@ -38,7 +41,7 @@ points:
         thumb:
           rows:
             one:
-              bind: [5, 5, 20, 25]
+              bind: [0, 0, 20, 1]
             two:
               rotate: -10
               shift: [1.8, 4]
@@ -79,8 +82,7 @@ pcbs:
         what: trrs
         where:
           - ref: fingers_inner_three
-            shift: [2cx, 2cx]
-            rotate: -90
+            shift: [4, 2cy]
         params:
           reverse: true
           A: wtf
