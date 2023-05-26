@@ -1,6 +1,7 @@
 points:
   key:
     padding: cy
+    tags.1u: true
   zones:
     fingers:
       columns:
@@ -33,15 +34,17 @@ points:
       anchor:
         ref: inner_inner_one
         shift: [0cx, -40]
-        rotate: -20
+        rotate: -110
       columns:
-        tuck:
-        home.key:
-          splay: -12
-          stagger: -2
-        reach.key:
-          splay: -12
-          stagger: -2
+        thumb:
+          rows:
+            one:
+            two:
+              rotate: -10
+              shift: [1.8, 4]
+            three:
+              rotate: -10
+              shift: [1.8, 4]
 pcbs:
   kipra-v1:
     footprints:
