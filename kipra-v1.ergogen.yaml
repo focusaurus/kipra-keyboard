@@ -14,19 +14,22 @@ units:
 points:
   key:
     tags.1u: true
-    bind: [0,2,0,0]
+    bind: [5,2,5,2]
   zones:
     fingers:
       columns:
         pinky:
         ring.key.stagger: 0.5cy
+        ring.rows.one.bind: [5,5,5+0.5cy,0]
         middle.key.stagger: 0.25cy
+        middle.rows.one.bind: [5,5,5+0.75cy,0]
         index.key.stagger: -0.25cy
         index.rows.one.bind: [0,1,24,0]
         inner.rows.four.skip: true
         inner.key.stagger: -0.15cy
-        inner.rows.one.bind: [0,2,24,0]
-        inner.rows.three.bind: [19.5,2,0,0]
+        inner.rows.one.bind: [0,5,25,0]
+        inner.rows.two.bind: [0,25,0,0]
+        inner.rows.three.bind: [19.5,25,0,0]
       rows:
         one:
         two:
@@ -41,15 +44,15 @@ points:
         thumb:
           rows:
             one:
-              bind: [0, 0, 20, 1]
+              bind: [0, 5, 21, 1]
             two:
               rotate: -10
               shift: [1.8, 4]
-              bind:  [5,5,5,0]
+              bind:  [5,5,5,5]
             three:
               rotate: -10
               shift: [1.8, 4]
-              bind: [0,5,2,0]
+              bind: [5,5,2,5]
 outlines:
   outline:
     main:
@@ -57,6 +60,7 @@ outlines:
       where: true
       size: cx
       bound: true
+      fillet: 2
 pcbs:
   kipra-v1:
     footprints:
@@ -73,7 +77,7 @@ pcbs:
         what: promicro
         where:
           - ref: fingers_inner_three
-            shift: [1U, 0.5U]
+            shift: [22, 0.5U]
             rotate: -90
         params:
           orientation: up
@@ -82,12 +86,11 @@ pcbs:
         what: trrs
         where:
           - ref: fingers_inner_three
-            shift: [4, 2cy]
+            shift: [2, 1.5cy]
         params:
           reverse: true
           A: wtf
           B: wtf
           C: wtf
           D: wtf
-
 preview: [main]
