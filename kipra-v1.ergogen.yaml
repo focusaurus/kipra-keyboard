@@ -19,12 +19,14 @@ points:
     fingers:
       columns:
         pinky:
+        pinky.rows.four.bind: [13.5,5,5,2]
         ring.key.stagger: 0.5cy
         ring.rows.one.bind: [5,5,5+0.5cy,0]
         middle.key.stagger: 0.25cy
         middle.rows.one.bind: [5,5,5+0.75cy,0]
         index.key.stagger: -0.25cy
         index.rows.one.bind: [0,1,24,0]
+        index.rows.four.bind: [9.25,2,5,0]
         inner.rows.four.skip: true
         inner.key.stagger: -0.15cy
         inner.rows.one.bind: [0,5,25,0]
@@ -52,7 +54,7 @@ points:
             three:
               rotate: -10
               shift: [1.8, 4]
-              bind: [5,5,2,5]
+              bind: [5,5,2,5.2]
 outlines:
   outline:
     main:
