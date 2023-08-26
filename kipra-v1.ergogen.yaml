@@ -25,9 +25,11 @@ points:
         shift: [100, -100]
       columns:
         pinky.key.column_net: P10
+        pinky.rows.four.bind: [8,2,5,2]
         ring.key:
           stagger: 0.5ky
           column_net: P16
+        ring.rows.one.bind: [5,2,8,2]
         middle.key:
           stagger: 0.25ky
           column_net: P14
@@ -56,8 +58,7 @@ points:
         ref: fingers_inner_one
         shift: [0, -40]
         rotate: -10
-      rows:
-        one.key.row_net: P09
+      rows.one.row_net: P09
       columns:
         outer:
           rows.one.rotate: -10
@@ -117,9 +118,9 @@ pcbs:
       trrs:
         what: trrs
         where:
-          - ref: fingers_inner_two
-            shift: [32, -4]
-            rotate: -90
+          ref: fingers_inner_two
+          shift: [32, -4]
+          rotate: -90
         params:
           reverse: true
           A: wtf
@@ -134,5 +135,24 @@ pcbs:
         params:
           from: "GND"
           to: "RST"
+      mountingHole1:
+        what: mountinghole
+        where:
+          ref: fingers_inner_two
+          shift: [14, -3]
+      mountingHole2:
+        what: mountinghole
+        where:
+          ref: thumb_outer_one
+          shift: [0, cy*0.7]
+      mountingHole3:
+        what: mountinghole
+        where:
+          ref: fingers_pinky_four
+          shift: [0, cy*0.7]
+      mountingHole4:
+        what: mountinghole
+        where:
+          ref: fingers_ring_one
+          shift: [0, -cy*0.7]
 preview: [main]
-

@@ -15,5 +15,5 @@ IFS=$'\n\t'
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 mkdir -p .build
 ERGOGEN_DIR="${ERGOGEN_DIR:-$HOME/github.com/ergogen/ergogen}"
-node "${ERGOGEN_DIR}/src/cli.js" kipra-v1.ergogen.yaml -o .build
+node "${ERGOGEN_DIR}/src/cli.js" . -o .build
 cp .build/pcbs/kipra-v1.kicad_pcb kipra-kicad/kipra-kicad.kicad_pcb
