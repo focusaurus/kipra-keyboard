@@ -45,19 +45,14 @@ points:
         ref: fingers_inner_one
         shift: [0, -40]
         rotate: -110
-      columns:
-        thumb:
-          rows:
-            one:
-              bind: [0, 5, 21, 1]
-            two:
-              rotate: -10
-              shift: [1.8, 4]
-              bind:  [5,5,5,5]
-            three:
-              rotate: -10
-              shift: [1.8, 4]
-              bind: [5,5,2,5.2]
+      rows:
+        outer:
+        home:
+          rotate: -10
+          shift: [1.8, 4]
+        inner:
+          rotate: -10
+          shift: [1.8, 4]
 outlines:
   outline:
     main:
