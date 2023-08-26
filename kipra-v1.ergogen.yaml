@@ -109,9 +109,9 @@ pcbs:
       mcu:
         what: promicro
         where:
-          - ref: fingers_inner_four
-            shift: [22, -8]
-            rotate: -90
+          ref: fingers_inner_four
+          shift: [22, -7]
+          rotate: -90
         params:
           orientation: up
           designator: MCU
@@ -130,8 +130,8 @@ pcbs:
       reset:
         what: button
         where:
-          - ref: fingers_inner_two
-            shift: [15, 5]
+          ref: fingers_inner_two
+          shift: [15, 5]
         params:
           from: "GND"
           to: "RST"
