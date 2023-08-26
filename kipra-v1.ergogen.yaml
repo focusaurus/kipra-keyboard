@@ -32,9 +32,9 @@ points:
         # inner.rows.four.skip: true
         inner.key.stagger: -0.15ky
         inner.rows.one.bind: [5,5,25,0]
-        inner.rows.two.bind: [5,25,0,0]
-        inner.rows.three.bind: [5,25,0,0]
-        inner.rows.four.bind: [3,25,0,0]
+        inner.rows.two.bind: [5,24,0,0]
+        inner.rows.three.bind: [5,24,0,0]
+        inner.rows.four.bind: [3,24,0,0]
       rows:
         one:
         two:
@@ -69,6 +69,9 @@ outlines:
       fillet: 2
 pcbs:
   kipra-v1:
+    outlines:
+      main:
+        outline: outline
     footprints:
       keys:
         what: choc
