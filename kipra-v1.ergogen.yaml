@@ -11,6 +11,9 @@ units:
   # I definitely want minimal vertical padding though
   # so "cy" here is choc y
   $default_padding: cy
+  # "proxy" width and height variables
+  kx: cx
+  ky: cy
 points:
   key:
     tags.1u: true
@@ -20,15 +23,15 @@ points:
       columns:
         pinky:
         pinky.rows.four.bind: [13.5,5,5,2]
-        ring.key.stagger: 0.5cy
-        ring.rows.one.bind: [5,5,5+0.5cy,0]
-        middle.key.stagger: 0.25cy
-        middle.rows.one.bind: [5,5,5+0.75cy,0]
-        index.key.stagger: -0.25cy
+        ring.key.stagger: 0.5ky
+        ring.rows.one.bind: [5,5,5+0.5ky,0]
+        middle.key.stagger: 0.25ky
+        middle.rows.one.bind: [5,5,5+0.75ky,0]
+        index.key.stagger: -0.25ky
         index.rows.one.bind: [0,1,24,0]
         index.rows.four.bind: [9.25,2,5,0]
-        inner.rows.four.skip: true
-        inner.key.stagger: -0.15cy
+        # inner.rows.four.skip: true
+        inner.key.stagger: -0.15ky
         inner.rows.one.bind: [0,5,25,0]
         inner.rows.two.bind: [0,25,0,0]
         inner.rows.three.bind: [19.5,25,0,0]
@@ -60,7 +63,7 @@ outlines:
     main:
       what: rectangle
       where: true
-      size: cx
+      size: kx
       bound: true
       fillet: 2
 pcbs:
@@ -86,8 +89,8 @@ pcbs:
       mcu:
         what: promicro
         where:
-          - ref: fingers_inner_three
-            shift: [22, 0.5U]
+          - ref: fingers_inner_four
+            shift: [22, -8]
             rotate: -90
         params:
           orientation: up
@@ -95,8 +98,9 @@ pcbs:
       trrs:
         what: trrs
         where:
-          - ref: fingers_inner_three
-            shift: [2, 1.5cy]
+          - ref: fingers_inner_two
+            shift: [32, 0]
+            rotate: -90
         params:
           reverse: true
           A: wtf
