@@ -20,6 +20,9 @@ points:
     bind: [5,2,5,2]
   zones:
     fingers:
+      # Fix placement on KiCAD sheet.
+      anchor:
+        shift: [100, -100]
       columns:
         pinky:
         ring.key.stagger: 0.5ky
@@ -111,13 +114,13 @@ pcbs:
           B: wtf
           C: wtf
           D: wtf
-      # reset:
-      #   what: button
-      #   where:
-      #     - ref: fingers_inner_two
-      #       shift: [32, 10]
-      #   params:
-      #     from: ""
-      #     to: ""
+      reset:
+        what: button
+        where:
+          - ref: fingers_inner_two
+            shift: [15, 5]
+        params:
+          from: "GND"
+          to: "RST"
 preview: [main]
 
