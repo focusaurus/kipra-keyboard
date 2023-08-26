@@ -155,4 +155,8 @@ pcbs:
         where:
           ref: fingers_ring_one
           shift: [0, -cy*0.7]
+cases:
+  bottom:
+    - name: outline
+      extrude: 1
 preview: [main]
