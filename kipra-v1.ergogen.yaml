@@ -23,11 +23,11 @@ points:
       columns:
         pinky:
         ring.key.stagger: 0.5ky
-        ring.rows.one.bind: [5,2,5+0.5ky,0]
+        # ring.rows.one.bind: [5,2,5,2]
         middle.key.stagger: 0.25ky
-        middle.rows.one.bind: [5,2,5+0.75ky,0]
+        # middle.rows.one.bind: [5,2,5+0.75ky,0]
         index.key.stagger: -0.25ky
-        index.rows.one.bind: [0,1,39,0]
+        # index.rows.one.bind: [0,1,20,0]
         index.rows.four.bind: [5,2,5,0]
         # inner.rows.four.skip: true
         inner.key.stagger: -0.15ky
@@ -50,14 +50,15 @@ points:
       columns:
         outer:
           rows.one.rotate: -10
+          rows.one.bind: [5,2,0,2]
         home:
           rows.one.rotate: -20
           rows.one.shift: [1, -5.5]
-          rows.one.bind: [2,2,5,3.5]
+          rows.one.bind: [5,2,0,3.5]
         inner:
           rows.one.rotate: -30
           rows.one.shift: [1, -14]
-          rows.one.bind: [2,2,5,3.2]
+          rows.one.bind: [4.5,2,0,4]
 outlines:
   outline:
     main:
@@ -99,7 +100,7 @@ pcbs:
         what: trrs
         where:
           - ref: fingers_inner_two
-            shift: [32, -10]
+            shift: [32, -4]
             rotate: -90
         params:
           reverse: true
@@ -116,3 +117,4 @@ pcbs:
       #     from: ""
       #     to: ""
 preview: [main]
+
