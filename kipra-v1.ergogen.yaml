@@ -24,25 +24,33 @@ points:
       anchor:
         shift: [100, -100]
       columns:
-        pinky:
-        ring.key.stagger: 0.5ky
-        # ring.rows.one.bind: [5,2,5,2]
-        middle.key.stagger: 0.25ky
-        # middle.rows.one.bind: [5,2,5+0.75ky,0]
-        index.key.stagger: -0.25ky
-        # index.rows.one.bind: [0,1,20,0]
+        pinky.key.column_net: P10
+        ring.key:
+          stagger: 0.5ky
+          column_net: P16
+        middle.key:
+          stagger: 0.25ky
+          column_net: P14
+        index.key:
+          stagger: -0.25ky
+          column_net: P15
+        inner.key:
+          stagger: -0.15ky
+          column_net: P18
         index.rows.four.bind: [5,2,5,0]
-        # inner.rows.four.skip: true
-        inner.key.stagger: -0.15ky
         inner.rows.one.bind: [5,5,25,0]
         inner.rows.two.bind: [5,24,0,0]
         inner.rows.three.bind: [5,24,0,0]
         inner.rows.four.bind: [3,24,0,0]
       rows:
         one:
+          row_net: P09
         two:
+          row_net: P08
         three:
+          row_net: P07
         four:
+          row_net: P06
     thumb:
       anchor:
         ref: fingers_inner_one
