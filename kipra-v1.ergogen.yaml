@@ -70,11 +70,19 @@ pcbs:
         what: choc
         where: true
         params:
-          from: GND
-          to: "{{name}}"
+          from: "{{column_net}}"
+          to: "{{colrow}}"
           hotswap: true
           reverse: true
           keycaps: true
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
       mcu:
         what: promicro
         where:
