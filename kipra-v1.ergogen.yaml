@@ -56,8 +56,8 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_one
-        shift: [0, -40]
-        rotate: -10
+        shift: [cx*0.5, -cy*1.75]
+        rotate: -30
       rows.one.row_net: P09
       columns:
         outer:
