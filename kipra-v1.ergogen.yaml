@@ -56,24 +56,23 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_one
-        shift: [cx*0.5, -cy*1.75]
-        rotate: -30
-      rows.one.row_net: P09
-      columns:
-        outer:
-          rows.one.rotate: -10
-          rows.one.bind: [5,2,0,2]
-          key.column_net: P14
-        home:
-          rows.one.rotate: -20
-          rows.one.shift: [1, -5.5]
-          rows.one.bind: [5,2,0,3.5]
-          key.column_net: P15
-        inner:
-          rows.one.rotate: -30
-          rows.one.shift: [1, -14]
-          rows.one.bind: [4.5,2,0,4]
-          key.column_net: P18
+        shift: [cx*2.5, -cy*3]
+      columns.thumb.key.column_net: P19
+      rows:
+        one:
+          rotate: 50
+          bind: [5,2,0,2]
+          row_net: P08
+        two:
+          rotate: 10
+          shift: [-2, 3.5]
+          #bind: [5,2,0,3.5]
+          row_net: P07
+        three:
+          rotate: 10
+          shift: [-2, 3.5]
+          #bind: [4.5,2,0,4]
+          row_net: P06
 outlines:
   outline:
     main:
