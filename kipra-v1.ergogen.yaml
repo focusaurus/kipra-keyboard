@@ -60,17 +60,17 @@ points:
       rows:
         one:
           rotate: 50
-          bind: [5,2,0,3]
+          bind: [5,2.15,0,3.3]
           row_net: P08
         two:
           rotate: 10
           shift: [-2, 3.5]
-          bind: [5,2.5,0,3]
+          bind: [5,2.85,0,3]
           row_net: P07
         three:
           rotate: 10
           shift: [-2, 3.5]
-          bind: [6,3,0,2]
+          bind: [6,3.5,0,2]
           row_net: P06
 outlines:
   outline:
@@ -141,18 +141,18 @@ pcbs:
       mountingHole2:
         what: mountinghole
         where:
-          ref: thumb_outer_one
-          shift: [0, cy*0.7]
+          ref: thumb_thumb_three
+          shift: [8, cy]
       mountingHole3:
         what: mountinghole
         where:
           ref: fingers_pinky_four
-          shift: [0, cy*0.7]
+          shift: [0, cy*0.8]
       mountingHole4:
         what: mountinghole
         where:
           ref: fingers_ring_one
-          shift: [0, -cy*0.7]
+          shift: [0, -cy*0.8]
 cases:
   bottom:
     - name: outline
