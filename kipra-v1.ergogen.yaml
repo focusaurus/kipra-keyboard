@@ -105,14 +105,14 @@ pcbs:
           shift: [0, -5]
           # rotate: 180
       mcu:
-        what: promicro
+        what: nice_nano_pretty
         where:
           ref: fingers_inner_four
-          shift: [22, -7]
-          rotate: -90
-        params:
-          orientation: up
-          designator: MCU
+          shift: [22, -5]
+          # rotate: -90
+        # params:
+        #   orientation: up
+        #   designator: MCU
       trrs:
         what: trrs
         where:
@@ -121,10 +121,10 @@ pcbs:
           rotate: -90
         params:
           reverse: true
-          A: wtf
-          B: wtf
-          C: wtf
-          D: wtf
+          A: P2
+          B: VCC
+          C: GND
+          D: P3
       reset:
         what: button
         where:
