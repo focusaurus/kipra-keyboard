@@ -125,14 +125,6 @@ pcbs:
           B: VCC
           C: GND
           D: P3
-      reset:
-        what: button
-        where:
-          ref: fingers_inner_two
-          shift: [15, 5]
-        params:
-          from: "GND"
-          to: "RST"
       mountingHole1:
         what: mountinghole
         where:
