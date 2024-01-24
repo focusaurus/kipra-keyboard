@@ -73,18 +73,27 @@ points:
           bind: [6,3.5,0,2]
           row_net: P06
 outlines:
-  outline:
+  plate_shape:
     main:
       what: rectangle
       where: true
       size: kx
       bound: true
       fillet: 2
+  switch_cutouts:
+    main:
+      what: rectangle
+      where: true
+      size: 13.8
+  test_print:
+    - name: plate_shape
+    - name: switch_cutouts
+      operation: subtract
 pcbs:
   kipra-v1:
     outlines:
       main:
-        outline: outline
+        outline: plate_shape
     footprints:
       keys:
         what: choc
