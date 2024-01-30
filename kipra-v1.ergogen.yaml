@@ -25,7 +25,7 @@ points:
         shift: [100, -100]
       columns:
         pinky.key.column_net: P10
-        pinky.rows.four.bind: [2,2,5,2]
+        pinky.rows.four.bind: [8,2,5,2]
         ring.key:
           stagger: 0.6ky
           column_net: P16
@@ -60,7 +60,7 @@ points:
       rows:
         one:
           rotate: 50
-          bind: [5,2.3,2,3.3]
+          bind: [5,2.3,8,3.3]
           row_net: P08
         two:
           rotate: 10
@@ -138,24 +138,29 @@ pcbs:
         what: mountinghole
         where:
           ref: fingers_inner_two
-          shift: [14, -3]
+          shift: [26, 6]
       mountingHole2:
         what: mountinghole
         where:
           ref: thumb_thumb_three
-          shift: [8, cy]
+          shift: [11, 12]
       mountingHole3:
         what: mountinghole
         where:
-          ref: fingers_pinky_four
-          shift: [0, cy*0.8]
+          ref: thumb_thumb_one
+          shift: [0, -cy*0.7]
       mountingHole4:
         what: mountinghole
         where:
+          ref: fingers_pinky_four
+          shift: [0, cy*0.7]
+      mountingHole5:
+        what: mountinghole
+        where:
           ref: fingers_ring_one
-          shift: [0, -cy*0.8]
+          shift: [0, -cy*0.7]
 cases:
   bottom:
-    - name: outline
+    - name: plate_shape
       extrude: 1
 preview: [main]
