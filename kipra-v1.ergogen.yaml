@@ -91,6 +91,7 @@ outlines:
       operation: subtract
 pcbs:
   kipra-v1:
+    # template: kicad7
     outlines:
       main:
         outline: plate_shape
@@ -104,6 +105,7 @@ pcbs:
           hotswap: true
           reverse: true
           keycaps: true
+          traces: true
       diode:
         what: diode
         where: true
