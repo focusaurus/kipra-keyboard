@@ -10,4 +10,4 @@
 - Switch to Part Design Workbench
 - Make a new body
 - put the sketch in the body
-- select the sketch and pad up 8mm
+- select the sketch and pad up 6mm
