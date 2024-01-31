@@ -26,22 +26,25 @@ points:
       columns:
         pinky.key.column_net: P10
         pinky.rows.four.bind: [8,2,5,2]
+        pinky.rows.one.bind: [5,2,8,2]
         ring.key:
           stagger: 0.6ky
           column_net: P16
-        ring.rows.one.bind: [5,2,8,2]
         middle.key:
           stagger: 0.25ky
           column_net: P14
+        middle.rows.one.bind: [5,2,5,2]
         index.key:
           stagger: -0.25ky
           column_net: P15
+        index.rows.one.bind: [5,8,6,0]
         inner.key:
           stagger: -0.15ky
           column_net: P18
-        inner.rows.one.bind: [5,5,20,0]
-        inner.rows.two.bind: [5,24,0,0]
-        inner.rows.three.bind: [5,24,0,0]
+        #inner.rows.one.bind: [20,20,20,20]
+        inner.rows.one.skip: true
+        inner.rows.two.bind: [5,24,20,0]
+        inner.rows.three.bind: [5,24,24,0]
         inner.rows.four.bind: [3,24,0,00]
       rows:
         one:
@@ -54,12 +57,12 @@ points:
           row_net: P05
     thumb:
       anchor:
-        ref: fingers_inner_one
-        shift: [cx*2.3, -cy*2.7]
+        ref: fingers_inner_two
+        shift: [cx*2.25, -cy*2.7]
       columns.thumb.key.column_net: P19
       rows:
         one:
-          rotate: 50
+          rotate: 45
           bind: [5,2.3,8,3.3]
           row_net: P08
         two:
@@ -70,7 +73,7 @@ points:
         three:
           rotate: 10
           shift: [-2, 3.5]
-          bind: [4,3.5,0,2]
+          bind: [0,0,0,2]
           row_net: P06
 outlines:
   plate_shape:
@@ -136,33 +139,34 @@ pcbs:
           B: VCC
           C: GND
           D: P3
-      mountingHole1:
+      mountingpinky1:
+        what: mountinghole
+        where:
+          ref: fingers_pinky_one
+          shift: [0, -cy*0.75]
+      mountingpinky4:
+        what: mountinghole
+        where:
+          ref: fingers_pinky_four
+          shift: [0, cy*0.75]
+      mountinginner2:
         what: mountinghole
         where:
           ref: fingers_inner_two
           shift: [26, 6]
-      mountingHole2:
+      mountingthumb3:
         what: mountinghole
         where:
           ref: thumb_thumb_three
-          shift: [11, 12]
-      mountingHole3:
+          shift: [0, cy*0.75]
+      mountingthumb1:
         what: mountinghole
         where:
           ref: thumb_thumb_one
-          shift: [0, -cy*0.7]
-      mountingHole4:
-        what: mountinghole
-        where:
-          ref: fingers_pinky_four
-          shift: [0, cy*0.7]
-      mountingHole5:
-        what: mountinghole
-        where:
-          ref: fingers_ring_one
-          shift: [0, -cy*0.7]
+          shift: [0, -cy*0.75]
 cases:
   bottom:
     - name: plate_shape
       extrude: 1
 preview: [main]
+
