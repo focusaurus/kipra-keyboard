@@ -58,21 +58,21 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*2, -cy*2.2]
+        shift: [cx*2, -cy*3]
       columns.thumb.key.column_net: P19
       rows:
         one:
-          rotate: -45
+          rotate: -55
           bind: [2,8,2,12]
           row_net: P08
         two:
           rotate: 10
-          shift: [-cx*0.9, -cy*1.1]
+          shift: [-cx*1.1, -cy*1.1]
           bind: [0,2,2,2]
           row_net: P07
         three:
           rotate: 10
-          shift: [-cx*0.9, -cy*1.1]
+          shift: [-cx*1.1, -cy*1.1]
           bind: [0,0,2,0]
           row_net: P06
 outlines:
@@ -158,12 +158,12 @@ pcbs:
         what: mountinghole
         where:
           ref: thumb_thumb_three
-          shift: [0, cy*0.75]
+          shift: [-cx*0.75, 0]
       mountingthumb1:
         what: mountinghole
         where:
           ref: thumb_thumb_one
-          shift: [0, -cy*0.75]
+          shift: [cx*0.75, 0]
 cases:
   bottom:
     - name: plate_shape
