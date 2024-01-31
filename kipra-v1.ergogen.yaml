@@ -37,7 +37,7 @@ points:
         index.key:
           stagger: -0.25ky
           column_net: P15
-        index.rows.one.bind: [5,8,6,0]
+        index.rows.one.bind: [5,8,5.5,0]
         inner.key:
           stagger: -0.15ky
           column_net: P18
@@ -58,22 +58,22 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*2.25, -cy*2.7]
+        shift: [cx*2, -cy*2.2]
       columns.thumb.key.column_net: P19
       rows:
         one:
-          rotate: 45
-          bind: [5,2.3,8,3.3]
+          rotate: -45
+          bind: [2,8,2,12]
           row_net: P08
         two:
           rotate: 10
-          shift: [-2, 3.5]
-          bind: [5,2.85,0,3]
+          shift: [-cx*0.9, -cy*1.1]
+          bind: [0,2,2,2]
           row_net: P07
         three:
           rotate: 10
-          shift: [-2, 3.5]
-          bind: [0,0,0,2]
+          shift: [-cx*0.9, -cy*1.1]
+          bind: [0,0,2,0]
           row_net: P06
 outlines:
   plate_shape:
@@ -169,4 +169,3 @@ cases:
     - name: plate_shape
       extrude: 1
 preview: [main]
-
