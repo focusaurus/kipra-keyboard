@@ -33,19 +33,17 @@ points:
         middle.key:
           stagger: 0.25ky
           column_net: P14
-        middle.rows.one.bind: [5,2,5,2]
         index.key:
           stagger: -0.25ky
           column_net: P15
-        index.rows.one.bind: [5,8,5.5,0]
+        index.rows.one.bind: [5,8,5,0]
         inner.key:
           stagger: -0.15ky
           column_net: P18
-        #inner.rows.one.bind: [20,20,20,20]
-        inner.rows.one.skip: true
-        inner.rows.two.bind: [5,24,20,0]
-        inner.rows.three.bind: [5,24,24,0]
-        inner.rows.four.bind: [3,24,0,00]
+        inner.rows.one.bind: [5,2,26,2]
+        inner.rows.two.bind: [5,24,5,2]
+        inner.rows.three.bind: [5,24,5,2]
+        inner.rows.four.bind: [3,24,5,2]
       rows:
         one:
           row_net: P08
@@ -58,22 +56,23 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*2, -cy*3]
+        shift: [cx*2.4, -cy*4.5]
       columns.thumb.key.column_net: P19
       rows:
-        one:
-          rotate: -55
-          bind: [2,8,2,12]
+        far:
+          rotate: -45
+          bind: [2.7,8,1.7,0]
           row_net: P08
-        two:
+        middle:
           rotate: 10
-          shift: [-cx*1.1, -cy*1.1]
-          bind: [0,2,2,2]
+          shift: [-cx*1.2, -cy*1.1]
+          bind: [2,6,2,0]
+          fillet: 0
           row_net: P07
-        three:
+        near:
           rotate: 10
-          shift: [-cx*1.1, -cy*1.1]
-          bind: [0,0,2,0]
+          shift: [-cx*1.2, -cy*1.1]
+          bind: [1.4,6,2.4,8]
           row_net: P06
 outlines:
   plate_shape:
@@ -154,15 +153,15 @@ pcbs:
         where:
           ref: fingers_inner_two
           shift: [26, 6]
-      mountingthumb3:
+      mountingthumbnear:
         what: mountinghole
         where:
-          ref: thumb_thumb_three
-          shift: [-cx*0.75, 0]
-      mountingthumb1:
+          ref: thumb_thumb_near
+          shift: [-cy*0.75, cx*0.5]
+      mountingthumbfar:
         what: mountinghole
         where:
-          ref: thumb_thumb_one
+          ref: thumb_thumb_far
           shift: [cx*0.75, 0]
 cases:
   bottom:
