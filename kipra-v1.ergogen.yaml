@@ -36,12 +36,13 @@ points:
         index.key:
           stagger: -0.25ky
           column_net: P15
-        index.rows.one.bind: [5,8,5,0]
+        index.rows.one.bind: [5,4,26,0]
         inner.key:
           stagger: -0.15ky
           column_net: P18
-        inner.rows.one.bind: [5,2,26,2]
-        inner.rows.two.bind: [5,24,5,2]
+        #inner.rows.one.bind: [5,2,26,2]
+        inner.rows.one.skip: true
+        inner.rows.two.bind: [5,24,2,2]
         inner.rows.three.bind: [5,24,5,2]
         inner.rows.four.bind: [3,24,5,2]
       rows:
@@ -56,23 +57,23 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*2.4, -cy*4.5]
+        shift: [cx*1.5, -cy*3.8]
       columns.thumb.key.column_net: P19
       rows:
         far:
           rotate: -45
-          bind: [2.7,8,1.7,0]
+          bind: [2,8,1.7,2]
           row_net: P08
         middle:
           rotate: 10
-          shift: [-cx*1.2, -cy*1.1]
-          bind: [2,6,2,0]
+          shift: [-cx*1.1, -cy*1.1]
+          bind: [2,2,2,0]
           fillet: 0
           row_net: P07
         near:
           rotate: 10
-          shift: [-cx*1.2, -cy*1.1]
-          bind: [1.4,6,2.4,8]
+          shift: [-cx*1.1, -cy*1.1]
+          bind: [1.6,4,2,8]
           row_net: P06
 outlines:
   plate_shape:

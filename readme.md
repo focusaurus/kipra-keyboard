@@ -2,7 +2,7 @@
 
 ## How to make the test print
 
-- use ergogen to output `test-print.dxf`
+- use ergogen to output `build/outlines/test_print.dxf`
 - In freecad, start a new file and use Draft workbench
 - Import the .dxf file. It will create many shapes.
 - Select them all and hit the blue up arrow to upgrade them to wires
