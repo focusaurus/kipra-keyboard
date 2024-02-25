@@ -13,8 +13,8 @@ IFS=$'\n\t'
 # ---- End unofficial bash strict mode boilerplate
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
-mkdir -p .build
+mkdir -p build
 ERGOGEN_DIR="${ERGOGEN_DIR:-$HOME/github.com/ergogen/ergogen}"
-node "${ERGOGEN_DIR}/src/cli.js" . -o .build
-cp .build/pcbs/kipra-v1.kicad_pcb kipra-kicad/kipra-kicad.kicad_pcb
-npx @jscad/cli@1 .build/cases/bottom.jscad -of stla
+node "${ERGOGEN_DIR}/src/cli.js" . -o build
+cp build/pcbs/kipra-v1.kicad_pcb kipra-kicad/kipra-kicad.kicad_pcb
+npx @jscad/cli@1 build/cases/bottom.jscad -of stla
