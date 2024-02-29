@@ -44,7 +44,7 @@ points:
           column_net: P18
         #inner.rows.one.bind: [5,2,26,2]
         inner.rows.one.skip: true
-        inner.rows.two.bind: [5,24,45,2]
+        inner.rows.two.bind: [5,24,43,2]
         inner.rows.three.bind: [5,24,5,2]
         inner.rows.four.bind: [3,24,5,2]
       rows:
@@ -59,7 +59,7 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*1.1, -cy*3.8]
+        shift: [cx*1, -cy*3.6]
       columns.thumb.key.column_net: P19
       rows:
         far:
@@ -160,7 +160,7 @@ pcbs:
         what: mountinghole
         where:
           ref: thumb_thumb_near
-          shift: [-cy*0.75, cx*0.5]
+          shift: [-cy, 0]
       mountingthumbfar:
         what: mountinghole
         where:
