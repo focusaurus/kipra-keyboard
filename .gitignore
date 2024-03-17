@@ -1,3 +1,6 @@
 *.stl
 *.gcode
 /build
+/.backups
+/.trash
+~*
