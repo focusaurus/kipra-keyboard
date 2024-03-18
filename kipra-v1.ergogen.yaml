@@ -49,13 +49,13 @@ points:
         inner.rows.four.bind: [3,24,5,2]
       rows:
         one:
-          row_net: P08
+          row_net: P8
         two:
-          row_net: P07
+          row_net: P7
         three:
-          row_net: P06
+          row_net: P6
         four:
-          row_net: P05
+          row_net: P5
     thumb:
       anchor:
         ref: fingers_inner_two
@@ -65,18 +65,18 @@ points:
         far:
           rotate: -45
           bind: [8,8,1.7,2]
-          row_net: P08
+          row_net: P8
         middle:
           rotate: 10
           shift: [-cx*1.1, -cy*1.1]
           bind: [2,2,2,0]
           fillet: 0
-          row_net: P07
+          row_net: P7
         near:
           rotate: 10
           shift: [-cx*1.1, -cy*1.1]
           bind: [1.6,4,2,8]
-          row_net: P06
+          row_net: P6
 outlines:
   plate_shape:
     main:
