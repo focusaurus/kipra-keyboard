@@ -142,6 +142,14 @@ pcbs:
           B: VCC
           C: GND
           D: P3
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: fingers_inner_two
+          shift: [25, -20]
       mountingpinky1:
         what: mountinghole
         where:
@@ -156,7 +164,7 @@ pcbs:
         what: mountinghole
         where:
           ref: fingers_inner_two
-          shift: [26, -12]
+          shift: [25, -12]
       mountingthumbnear:
         what: mountinghole
         where:
