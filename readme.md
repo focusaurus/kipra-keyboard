@@ -11,3 +11,15 @@
 - Make a new body
 - put the sketch in the body
 - select the sketch and pad up 6mm
+
+# MCU pinout on RP2040 (compatible)
+
+| Pin | Use   | (center) | Use        | Pin |
+| --- | ----- | -------- | ---------- | --- |
+|     |       |          | Col Thumb  | P19 |
+|     |       |          | col inner  | P18 |
+| P6  | row 4 |          | col index  | P15 |
+| P7  | row 3 |          | col middle | P15 |
+| P8  | row 2 |          | col ring   | P16 |
+| P9  | row 1 |          | col pinky  | P10 |
+
