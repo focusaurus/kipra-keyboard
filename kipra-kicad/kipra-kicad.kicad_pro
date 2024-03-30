@@ -367,6 +367,10 @@
       },
       {
         "netclass": "Default",
+        "pattern": "P9"
+      },
+      {
+        "netclass": "Default",
         "pattern": "P8"
       },
       {
@@ -376,10 +380,6 @@
       {
         "netclass": "Default",
         "pattern": "P6"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "P5"
       },
       {
         "netclass": "Default",
@@ -427,7 +427,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "P9"
+        "pattern": "P5"
       },
       {
         "netclass": "Default",
