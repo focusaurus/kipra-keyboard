@@ -1,0 +1,78 @@
+	(gr_text "It's kinda pragmatic."
+		(at 142.24 111.76 0)
+		(layer "B.SilkS")
+		(uuid "14310a06-7b86-49f9-8c11-7ac5819a92c4")
+		(effects
+			(font
+				(face "Hack Nerd Font Mono")
+				(size 2 2)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "It's kinda pragmatic."
+		(at 114.3 111.76 0)
+		(layer "F.SilkS")
+		(uuid "1876ceee-6fbf-4394-9c26-076bf9e850e8")
+		(effects
+			(font
+				(face "Hack Nerd Font Mono")
+				(size 2 2)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "kipra by focusaurus\nv1 2024-04"
+		(at 114.3 104.122745 0)
+		(layer "F.SilkS")
+		(uuid "62b3cd1b-20fa-40ec-8e7b-53430c8d1075")
+		(effects
+			(font
+				(face "Hack Nerd Font Mono")
+				(size 2 2)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "kipra by focusaurus\nv1 2024-04"
+		(at 142.004128 104.14 -0)
+		(layer "B.SilkS")
+		(uuid "0a488f78-25dc-43ef-ab07-0e526df01eaa")
+		(effects
+			(font
+				(face "Hack Nerd Font Mono")
+				(size 2 2)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "k\ni\np\nr\na"
+		(at 190.5 114.3 0)
+		(layer "F.SilkS")
+		(uuid "ecdb0e17-5a8c-42a1-92d1-ef0c979e5a28")
+		(effects
+			(font
+				(face "Hack Nerd Font")
+				(size 4 4)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "k\ni\np\nr\na"
+		(at 193.843738 114.114521 -0)
+		(layer "B.SilkS")
+		(uuid "f0b75584-1ed1-4f23-a99d-da90fb8a0843")
+		(effects
+			(font
+				(face "Hack Nerd Font")
+				(size 4 4)
+				(thickness 0.15)
+			)
+			(justify left bottom mirror)
+		)
+	)
