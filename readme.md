@@ -13,6 +13,7 @@ There's a [blog post with details on this build](https://peterlyons.com/problog/
 - The kicad PCB project files which were generated initially with ergogen then edited in kicad to route the tracks, add silkscreen, etc.
 - Some reference pinout images for the RP2040 MCU I used
 - a few screenshots from along the way
+- a zip of the gerber files I sent to PCBWay if you just want to order PCBs
 
 # Notes to self
 
