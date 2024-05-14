@@ -39,3 +39,34 @@ Info for reference:
   - you want to mount your MCUs face down (Dunno, many folks like this?)
   - you want the jumper solders on the back so they are out of sight and don't obscure the silkscreen for the MCU pinout labels
 - BUT in the case of the kipra v1, I specifically want to mount my MCUs face up because they have on-board reset buttons so flashing them is easy and I don't need a reset button on the main keyboard PCB. I added support for one just in case anyway, but hope to not have to use it. In general, I want to support the trend of the hobbyist MCUs having conveniences built-in so the barrier to build a custom keyboard is lower, and every little bit helps.
+
+
+## How to: model the case in FreeCad
+
+- start a new file
+- switch to the Draft workbench
+- import `build/outlines/plate-shape.dxf`
+- select all the shapes in the tree view
+- click "Upgrade" blue up arrow to get a wire
+- click the wire and click the squiggly "convert birectionally from draft to sketch"
+- switch to the Part workbench
+- select the sketch and select the 2D offset (hidden behind an arrow next to 3D offset)
+- set distance to 2.6mm (2.4 for the wall and 0.2 for fit)
+  - set the join type to tangent!
+- click fill offset
+- select the 2D offset in the tree view and click extrude to 10mm
+
+## How to: model the case in FreeCAD (prototype 6)
+- start a new file
+- switch to the Draft workbench
+- import `build/outlines/plate-shape.dxf`
+- select all the shapes in the tree view
+- click "Upgrade" blue up arrow to get a wire
+- click "Upgrade" blue up arrow again to get a face
+- Use the offset 2D tool to get an offset 2.4mm from the edge of the face
+  - set the join type to tangent!
+- extrude that offset up 12mm and click to make a solid
+- click the wire and click the squiggly "convert birectionally from draft to sketch"
+  - this gives us the outer wall
+- extrude the face for the bottow up 2mm
+- this is all not exactly right but I was experimenting too quickly to keep track of it
