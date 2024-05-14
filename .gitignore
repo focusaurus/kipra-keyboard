@@ -1,6 +1,6 @@
 *.zip
 *.gcode
-/build
+build
 /.backups
 /.trash
 ~*
