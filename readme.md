@@ -1,8 +1,24 @@
+# kipra: It's kinda pragmatic.
+
+A split ergonomic mechanical keyboard built with ergogen, kicad, and freecad.
+
+There's a [blog post with details on this build](https://peterlyons.com/problog/2024/05/kipra-keyboard/) on my blog.
+
+![kipra v1](kipra-v1.jpg)
+
+## What's in this repository
+
+- The ergogen file at `v1/kipra-v1.ergogen.yaml`
+- FreeCAD files for the case, palm rest, and various jigs and smaller parts
+- The kicad PCB project files which were generated initially with ergogen then edited in kicad to route the tracks, add silkscreen, etc.
+- Some reference pinout images for the RP2040 MCU I used
+- a few screenshots from along the way
+
 # Notes to self
 
 ## How to make the test print
 
-- use ergogen to output `build/outlines/test_print.dxf`
+- use ergogen via `./bin/build.sh` to output `v1/build/outlines/test_print.dxf`
 - In freecad, start a new file and use Draft workbench
 - Import the .dxf file. It will create many shapes.
 - Select them all and hit the blue up arrow to upgrade them to wires
@@ -45,7 +61,7 @@ Info for reference:
 
 - start a new file
 - switch to the Draft workbench
-- import `build/outlines/plate-shape.dxf`
+- import `v1/build/outlines/plate-shape.dxf`
 - select all the shapes in the tree view
 - click "Upgrade" blue up arrow to get a wire
 - click the wire and click the squiggly "convert birectionally from draft to sketch"
@@ -59,7 +75,7 @@ Info for reference:
 ## How to: model the case in FreeCAD (prototype 6)
 - start a new file
 - switch to the Draft workbench
-- import `build/outlines/plate-shape.dxf`
+- import `v1/build/outlines/plate-shape.dxf`
 - select all the shapes in the tree view
 - click "Upgrade" blue up arrow to get a wire
 - click "Upgrade" blue up arrow again to get a face
