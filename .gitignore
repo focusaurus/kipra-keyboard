@@ -1,8 +1,8 @@
-*.stl
+*.zip
 *.gcode
 /build
 /.backups
 /.trash
 ~*
-kipra-kicad/kipra-kicad-backups
-kipra-kicad/fp-info-cache
+*/kicad/kipra-kicad-backups
+*/kicad/fp-info-cache
