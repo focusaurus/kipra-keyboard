@@ -106,6 +106,54 @@ outlines:
     - name: plate_shape
     - name: plate_inner
       operation: subtract
+  case_bottom_outer:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 2.4
+  case_bottom_inner:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 0.4
+  case_top_outer:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 2.4 + 2.4
+  case_top_inner:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 2.4 + 0.4
+cases:
+  bottom_plate:
+    - name: bottom_plate
+      extrude: 2
+  case_bottom:
+    - name: case_bottom_outer
+      extrude: 18
+    - name: case_bottom_inner
+      extrude: 16.5
+      operation: subtract
+  case_top:
+    - name: case_top_outer
+      extrude: 18
+    - name: case_top_inner
+      extrude: 16.5
+      operation: subtract
 pcbs:
   kipra-v1:
     # template: kicad7
@@ -187,8 +235,4 @@ pcbs:
         where:
           ref: thumb_thumb_far
           shift: [cx*0.75, 0]
-cases:
-  bottom_plate:
-    - name: bottom_plate
-      extrude: 2
 preview: [main]
