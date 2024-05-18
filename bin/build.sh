@@ -4,7 +4,7 @@
 
 # ---- Start unofficial bash strict mode boilerplate
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
-set -o errexit # always exit on error
+set -o errexit  # always exit on error
 set -o errtrace # trap errors in functions as well
 set -o pipefail # don't ignore exit codes when piping output
 # set -x # enable debugging
@@ -16,5 +16,11 @@ cd "$(dirname "${BASH_SOURCE[0]}")/../v1"
 mkdir -p build
 ERGOGEN_DIR="${ERGOGEN_DIR:-$HOME/github.com/ergogen/ergogen}"
 node "${ERGOGEN_DIR}/src/cli.js" . -o build
-cp build/pcbs/kipra-v1.kicad_pcb kicad/kipra-kicad.kicad_pcb
-npx @jscad/cli@1 build/cases/bottom.jscad -of stla
+# cp build/pcbs/kipra-v1.kicad_pcb kicad/kipra-kicad.kicad_pcb
+find build/cases/ -type f -name '*.jscad' | {
+  while IFS= read -r file_path; do
+    npx @jscad/cli@1 "${file_path}" -of stla
+  done
+}
+# just display the artifacts for confirmation
+find build -type f

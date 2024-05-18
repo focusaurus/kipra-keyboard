@@ -94,6 +94,18 @@ outlines:
     - name: plate_shape
     - name: switch_cutouts
       operation: subtract
+  plate_inner:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: -3
+  bottom_plate:
+    - name: plate_shape
+    - name: plate_inner
+      operation: subtract
 pcbs:
   kipra-v1:
     # template: kicad7
@@ -176,7 +188,7 @@ pcbs:
           ref: thumb_thumb_far
           shift: [cx*0.75, 0]
 cases:
-  bottom:
-    - name: plate_shape
-      extrude: 1
+  bottom_plate:
+    - name: bottom_plate
+      extrude: 2
 preview: [main]
