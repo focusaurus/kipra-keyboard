@@ -78,7 +78,7 @@ points:
           bind: [1.6,4,2,8]
           row_net: P8
 outlines:
-  plate_shape:
+  pcb_shape:
     main:
       what: rectangle
       where: true
@@ -91,10 +91,10 @@ outlines:
       where: true
       size: 13.8
   test_print:
-    - name: plate_shape
+    - name: pcb_shape
     - name: switch_cutouts
       operation: subtract
-  plate_inner:
+  pcb_shrunk:
     main:
       what: rectangle
       where: true
@@ -102,11 +102,11 @@ outlines:
       bound: true
       fillet: 2
       expand: -3
-  bottom_plate:
-    - name: plate_shape
-    - name: plate_inner
+  liner_shape:
+    - name: pcb_shape
+    - name: pcb_shrunk
       operation: subtract
-  case_bottom_outer:
+  case_bottom:
     main:
       what: rectangle
       where: true
@@ -114,7 +114,7 @@ outlines:
       bound: true
       fillet: 2
       expand: 2.4
-  case_bottom_inner:
+  case_bottom_void:
     main:
       what: rectangle
       where: true
@@ -122,7 +122,7 @@ outlines:
       bound: true
       fillet: 2
       expand: 0.4
-  case_top_outer:
+  case_top:
     main:
       what: rectangle
       where: true
@@ -130,36 +130,59 @@ outlines:
       bound: true
       fillet: 2
       expand: 2.4 + 2.4
-  case_top_inner:
+  case_top_void:
     main:
       what: rectangle
       where: true
       size: kx
       bound: true
       fillet: 2
-      expand: 2.4 + 0.4
+      expand: 2.4 + 0.2
+  case_top_pull:
+    main:
+      what: circle
+      radius: 15
+      where:
+        ref: fingers_middle_one
 cases:
-  bottom_plate:
-    - name: bottom_plate
-      extrude: 2
-  case_bottom:
-    - name: case_bottom_outer
-      extrude: 18
-    - name: case_bottom_inner
+  liner_template:
+    - name: liner_shape
+      extrude: 3
+  half_case_bottom:
+    - name: case_bottom
+      extrude: 16.5 +  2.4
+    - name: case_bottom_void
       extrude: 16.5
       operation: subtract
-  case_top:
-    - name: case_top_outer
-      extrude: 18
-    - name: case_top_inner
+  half_case_top:
+    - name: case_top
+      extrude: 16.5 + 2.4
+    - name: case_top_void
       extrude: 16.5
+      operation: subtract
+  full_case_bottom:
+    - name: case_bottom
+      extrude: 32 + 2.4
+    - name: case_bottom_void
+      extrude: 32
+      operation: subtract
+  full_case_top:
+    - name: case_top
+      extrude: 20 + 2.4
+    - name: case_top_void
+      extrude: 20
+      operation: subtract
+    - name: case_top_pull
+      extrude: 300
+      shift: [-100, 0, 0]
+      rotate: [0, 90, 0]
       operation: subtract
 pcbs:
   kipra-v1:
     # template: kicad7
     outlines:
       main:
-        outline: plate_shape
+        outline: pcb_shape
     footprints:
       keys:
         what: choc
