@@ -1,0 +1,261 @@
+metadata:
+  version: 2.0.0
+  author: Peter Lyons
+  www: https://peterlyons.com
+units:
+  # choc spread is just a LITTLE too tight for me,
+  # so bump it up by 1mm
+  # This is by coincidence the same as "u" but "cx + 1"
+  # expresses the intent more clearly
+  $default_spread: cx + 1
+  # I definitely want minimal vertical padding though
+  # so "cy" here is choc y
+  $default_padding: cy
+  # "proxy" width and height variables
+  kx: cx
+  ky: cy
+points:
+  key:
+    tags.1u: true
+    bind: [5,2,5,2]
+  zones:
+    fingers:
+      anchor:
+        shift: [100, -100]
+      columns:
+        pinky.key.column_net: P10
+        pinky.rows.four.bind: [5+0.5ky,2,5,2]
+        pinky.rows.one.bind: [5,2,5,2]
+        ring.key:
+          stagger: 0.25ky
+          column_net: P16
+        ring.rows.one.bind: [0,0,5+0.25ky,2]
+        ring.rows.four.bind: [5+0.25ky,0,0,0]
+        middle.key:
+          stagger: 0.25ky
+          column_net: P14
+        middle.rows.one.bind: [0,2,5+0.5ky,5]
+        index.key:
+          stagger: -0.25ky
+          column_net: P15
+        index.rows.one.bind: [0,0,5+0.25ky,0]
+        index.rows.four.bind: [5+0.25ky,0,0,0]
+        inner.key:
+          stagger: -0.15ky
+          column_net: P18
+        inner.rows.one.skip: true
+        inner.rows.two.bind: [5,30,1.15ky+4.15,2]
+        inner.rows.three.bind: [5,30,5,2]
+        inner.rows.four.bind: [5+0.4ky,30,5,2]
+      rows:
+        one:
+          row_net: P9
+        two:
+          row_net: P8
+        three:
+          row_net: P7
+        four:
+          row_net: P6
+    thumb:
+      anchor:
+        ref: fingers_inner_two
+        shift: [cx*1.9, -cy*2.5]
+      columns.thumb.key.column_net: P19
+      rows:
+        far:
+          rotate: -45
+          bind: [5,8,5,2]
+          row_net: P6
+        middle:
+          rotate: 10
+          shift: [-cx*1.1, -cy*1.1]
+          bind: [0,2,5,0]
+          fillet: 0
+          row_net: P7
+        near:
+          rotate: 10
+          shift: [-cx*1.1, -cy*1.1]
+          bind: [0,2,5,0]
+          row_net: P8
+outlines:
+  pcb_shape:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+  switch_cutouts:
+    main:
+      what: rectangle
+      where: true
+      size: 13.8
+  test_print:
+    - name: pcb_shape
+    - name: switch_cutouts
+      operation: subtract
+  pcb_shrunk:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      # expand: -3
+  liner_shape:
+    - name: pcb_shape
+    - name: pcb_shrunk
+      operation: subtract
+  case_bottom:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 2.4
+  case_bottom_void:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 0.4
+  case_top:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 2.4 + 2.4
+  case_top_void:
+    main:
+      what: rectangle
+      where: true
+      size: kx
+      bound: true
+      fillet: 2
+      expand: 2.4 + 0.2
+  case_top_pull:
+    main:
+      what: circle
+      radius: 15
+      where:
+        ref: fingers_middle_one
+cases:
+  liner_template:
+    - name: liner_shape
+      extrude: 3
+  test_print:
+    - name: test_print
+      extrude: 6
+  half_case_bottom:
+    - name: case_bottom
+      extrude: 16.5 +  2.4
+    - name: case_bottom_void
+      extrude: 16.5
+      operation: subtract
+  half_case_top:
+    - name: case_top
+      extrude: 16.5 + 2.4
+    - name: case_top_void
+      extrude: 16.5
+      operation: subtract
+  full_case_bottom:
+    - name: case_bottom
+      extrude: 32 + 2.4
+    - name: case_bottom_void
+      extrude: 32
+      operation: subtract
+  full_case_top:
+    - name: case_top
+      extrude: 20 + 2.4
+    - name: case_top_void
+      extrude: 20
+      operation: subtract
+    - name: case_top_pull
+      extrude: 300
+      shift: [-100, 0, 0]
+      rotate: [0, 90, 0]
+      operation: subtract
+pcbs:
+  kipra-v1:
+    outlines:
+      main:
+        outline: pcb_shape
+    footprints:
+      keys:
+        what: choc
+        where: true
+        params:
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          hotswap: false
+          reverse: true
+          keycaps: true
+          traces: true
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      mcu:
+        what: nice_nano
+        where:
+          ref: fingers_inner_four
+          shift: [22, -5]
+        params:
+          use_rectangular_jumpers: true
+        #   orientation: up
+        #   designator: MCU
+      trrs:
+        what: trrs
+        where:
+          ref: fingers_inner_two
+          shift: [32, -4]
+          rotate: -90
+        params:
+          reverse: true
+          A: P2
+          B: VCC
+          C: GND
+          D: P3
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: fingers_inner_two
+          shift: [25, -20]
+      mountingpinky1:
+        what: mountinghole
+        where:
+          ref: fingers_pinky_one
+          shift: [0, -cy*0.75]
+      mountingpinky4:
+        what: mountinghole
+        where:
+          ref: fingers_pinky_four
+          shift: [0, cy*0.75]
+      mountinginner1:
+        what: mountinghole
+        where:
+          ref: fingers_inner_two
+          shift: [25, -12]
+      mountingthumbnear:
+        what: mountinghole
+        where:
+          ref: thumb_thumb_near
+          shift: [-cy, 0]
+      mountingthumbfar:
+        what: mountinghole
+        where:
+          ref: thumb_thumb_far
+          shift: [cx*0.75, 0]
+preview: [main]

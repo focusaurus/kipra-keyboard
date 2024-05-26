@@ -12,7 +12,7 @@ set -o pipefail # don't ignore exit codes when piping output
 IFS=$'\n\t'
 # ---- End unofficial bash strict mode boilerplate
 
-cd "$(dirname "${BASH_SOURCE[0]}")/../v1"
+cd "$(dirname "${BASH_SOURCE[0]}")/../v2"
 mkdir -p build
 ERGOGEN_DIR="${ERGOGEN_DIR:-$HOME/github.com/ergogen/ergogen}"
 node "${ERGOGEN_DIR}/src/cli.js" . -o build
