@@ -16,7 +16,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")/../v2"
 mkdir -p build
 ERGOGEN_DIR="${ERGOGEN_DIR:-$HOME/github.com/ergogen/ergogen}"
 node "${ERGOGEN_DIR}/src/cli.js" . -o build
-# cp build/pcbs/kipra-v1.kicad_pcb kicad/kipra-kicad.kicad_pcb
+cp build/pcbs/kipra-v2.kicad_pcb kicad/kipra-v2/kipra-v2.kicad_pcb
 find build/cases/ -type f -name '*.jscad' | {
   while IFS= read -r file_path; do
     npx @jscad/cli@1 "${file_path}" -of stla

@@ -59,7 +59,7 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*1.9, -cy*2.5]
+        shift: [cx*1.95, -cy*2.55]
       columns.thumb.key.column_net: P19
       rows:
         far:
@@ -101,7 +101,7 @@ outlines:
       size: kx
       bound: true
       fillet: 2
-      # expand: -3
+      expand: -3
   liner_shape:
     - name: pcb_shape
     - name: pcb_shrunk
@@ -151,18 +151,6 @@ cases:
   test_print:
     - name: test_print
       extrude: 6
-  half_case_bottom:
-    - name: case_bottom
-      extrude: 16.5 +  2.4
-    - name: case_bottom_void
-      extrude: 16.5
-      operation: subtract
-  half_case_top:
-    - name: case_top
-      extrude: 16.5 + 2.4
-    - name: case_top_void
-      extrude: 16.5
-      operation: subtract
   full_case_bottom:
     - name: case_bottom
       extrude: 32 + 2.4
@@ -181,7 +169,7 @@ cases:
       rotate: [0, 90, 0]
       operation: subtract
 pcbs:
-  kipra-v1:
+  kipra-v2:
     outlines:
       main:
         outline: pcb_shape
@@ -208,7 +196,7 @@ pcbs:
         what: nice_nano
         where:
           ref: fingers_inner_four
-          shift: [22, -5]
+          shift: [24, 2]
         params:
           use_rectangular_jumpers: true
         #   orientation: up
@@ -217,7 +205,7 @@ pcbs:
         what: trrs
         where:
           ref: fingers_inner_two
-          shift: [32, -4]
+          shift: [36, 0]
           rotate: -90
         params:
           reverse: true
@@ -225,37 +213,4 @@ pcbs:
           B: VCC
           C: GND
           D: P3
-      reset:
-        what: button
-        params:
-          from: GND
-          to: RST
-        where:
-          ref: fingers_inner_two
-          shift: [25, -20]
-      mountingpinky1:
-        what: mountinghole
-        where:
-          ref: fingers_pinky_one
-          shift: [0, -cy*0.75]
-      mountingpinky4:
-        what: mountinghole
-        where:
-          ref: fingers_pinky_four
-          shift: [0, cy*0.75]
-      mountinginner1:
-        what: mountinghole
-        where:
-          ref: fingers_inner_two
-          shift: [25, -12]
-      mountingthumbnear:
-        what: mountinghole
-        where:
-          ref: thumb_thumb_near
-          shift: [-cy, 0]
-      mountingthumbfar:
-        what: mountinghole
-        where:
-          ref: thumb_thumb_far
-          shift: [cx*0.75, 0]
 preview: [main]
