@@ -58,7 +58,7 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*1.95, -cy*2.4]
+        shift: [cx*1.95, -cy*2.5]
       columns.thumb.key.column_net: P19
       rows:
         far:
@@ -213,4 +213,3 @@ pcbs:
           C: GND
           D: P3
 preview: [main]
-
