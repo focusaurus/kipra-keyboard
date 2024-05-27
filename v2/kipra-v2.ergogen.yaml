@@ -195,7 +195,7 @@ pcbs:
         what: nice_nano
         where:
           ref: fingers_inner_four
-          shift: [24, 2]
+          shift: [24, 0]
         params:
           use_rectangular_jumpers: true
         #   orientation: up
