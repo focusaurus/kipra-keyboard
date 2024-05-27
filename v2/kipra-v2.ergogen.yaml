@@ -65,14 +65,16 @@ points:
         far:
           rotate: -45
           row_net: P6
+          bind: [0,0,0,0]
         middle:
           rotate: 10
           shift: [-cx*1.1, -cy*1.1]
-          fillet: 0
+          bind: [bb,bb+kx,bb,bb]
           row_net: P7
         near:
           rotate: 10
           shift: [-cx*1.1, -cy*1.1]
+          bind: [0,0,0,0]
           row_net: P8
 outlines:
   pcb_shape:
