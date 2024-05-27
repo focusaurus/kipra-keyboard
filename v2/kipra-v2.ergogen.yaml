@@ -14,40 +14,39 @@ units:
   # "proxy" width and height variables
   kx: cx
   ky: cy
-  bindbottom: 7.5
   stagger: 0.25ky
+  bb: 5 # bind base
 points:
   key:
     tags.1u: true
-    bind: [5,2,5,2]
+    bind: [bb,bb,bb,bb]
   zones:
     fingers:
       anchor:
         shift: [100, -100]
       columns:
         pinky.key.column_net: P10
-        pinky.rows.four.bind: [5+(2stagger),2,5,2]
-        pinky.rows.one.bind: [5,2,bindbottom,2]
+        pinky.rows.four.bind: [bb+(2stagger),bb,bb,bb]
         ring.key:
           stagger: 0.25ky
           column_net: P16
-        ring.rows.one.bind: [0,0,bindbottom+stagger,2]
-        ring.rows.four.bind: [5+0.25ky,0,0,0]
+        ring.rows.one.bind: [bb,bb,bb+stagger,bb]
+        ring.rows.four.bind: [bb+stagger,bb,bb,bb]
         middle.key:
           stagger: 0.25ky
           column_net: P14
-        middle.rows.one.bind: [0,2,bindbottom+(2stagger),5]
+        middle.rows.one.bind: [bb,bb,bb+(2stagger),bb]
         index.key:
           stagger: -0.25ky
           column_net: P15
-        index.rows.one.bind: [0,60,bindbottom+stagger,0]
-        index.rows.four.bind: [5+0.25ky,0,0,0]
+        index.rows.one.bind: [bb,0,bb+stagger,bb]
+        index.rows.four.bind: [bb+stagger,0,bb,bb]
         inner.key:
           column_net: P18
         inner.rows.one.skip: true
-        inner.rows.two.bind: [0,30,bindbottom+1.25ky,2]
-        inner.rows.three.bind: [5,30,5,2]
-        inner.rows.four.bind: [5+0.25ky,30,5,2]
+        inner.rows.two.bind: [5,30,bb+ky+stagger,bb]
+        inner.rows.three.bind: [bb,30,bb,bb]
+        inner.rows.four.bind: [bb+stagger,30,bb,bb]
       rows:
         one:
           row_net: P9
@@ -60,23 +59,20 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [2.8kx, -1.3ky]
+        shift: [cx*1.95, -cy*2.5]
       columns.thumb.key.column_net: P19
       rows:
         far:
           rotate: -45
-          bind: [5,2,2.25,0]
           row_net: P6
         middle:
           rotate: 10
-          shift: [-1.0kx, -1.1ky]
-          bind: [4.8,3,5,0]
+          shift: [-cx*1.1, -cy*1.1]
           fillet: 0
           row_net: P7
         near:
           rotate: 10
-          shift: [-1.0kx, -1.1ky]
-          bind: [2,2,2,0]
+          shift: [-cx*1.1, -cy*1.1]
           row_net: P8
 outlines:
   pcb_shape:
@@ -215,3 +211,4 @@ pcbs:
           C: GND
           D: P3
 preview: [main]
+
