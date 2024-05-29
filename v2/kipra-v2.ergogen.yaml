@@ -28,16 +28,16 @@ points:
         pinky.key.column_net: P10
         pinky.rows.four.bind: [bb+(2stagger),bb,bb,bb]
         ring.key:
-          stagger: 0.25ky
+          stagger: stagger
           column_net: P16
         ring.rows.one.bind: [bb,bb,bb+stagger,bb]
         ring.rows.four.bind: [bb+stagger,bb,bb,bb]
         middle.key:
-          stagger: 0.25ky
+          stagger: stagger
           column_net: P14
         middle.rows.one.bind: [bb,bb,bb+(2stagger),bb]
         index.key:
-          stagger: -0.25ky
+          stagger: -stagger
           column_net: P15
         index.rows.one.bind: [bb,0,bb+stagger,bb]
         index.rows.four.bind: [bb+stagger,0,bb,bb]
@@ -59,7 +59,7 @@ points:
     thumb:
       anchor:
         ref: fingers_inner_two
-        shift: [cx*1.95, -cy*2.5]
+        shift: [2.2cx, -2.5cy]
       columns.thumb.key.column_net: P19
       rows:
         far:
@@ -68,12 +68,12 @@ points:
           bind: [0,0,0,0]
         middle:
           rotate: 10
-          shift: [-cx*1.1, -cy*1.1]
+          shift: [-1.1cx, -1.1cy]
           bind: [bb,bb+kx,bb,bb]
           row_net: P7
         near:
           rotate: 10
-          shift: [-cx*1.1, -cy*1.1]
+          shift: [-1.1cx, -1.1cy]
           bind: [0,0,0,0]
           row_net: P8
 outlines:
@@ -213,4 +213,3 @@ pcbs:
           C: GND
           D: P3
 preview: [main]
-
