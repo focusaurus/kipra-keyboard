@@ -15,7 +15,7 @@ units:
   kx: cx
   ky: cy
   stagger: 0.25ky
-  bb: 5 # bind base
+  bb: 7 # bind base
 points:
   key:
     tags.1u: true
@@ -44,7 +44,7 @@ points:
         inner.key:
           column_net: P18
         inner.rows.one.skip: true
-        inner.rows.two.bind: [5,30,bb+ky+stagger,bb]
+        inner.rows.two.bind: [bb,30,bb+ky+stagger,bb]
         inner.rows.three.bind: [bb,30,bb,bb]
         inner.rows.four.bind: [bb+stagger,30,bb,bb]
       rows:
