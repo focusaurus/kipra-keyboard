@@ -151,7 +151,8 @@ outlines:
 cases:
   liner_template:
     - name: liner_shape
-      extrude: 3
+      # diodes are about 1.05 tall and we want to just barely clear that
+      extrude: 1.2
   test_print:
     - name: test_print
       extrude: 6
@@ -253,4 +254,3 @@ pcbs:
           height: txtheight
           width: txtwidth
 preview: [main]
-
