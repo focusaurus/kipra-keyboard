@@ -209,7 +209,7 @@ pcbs:
         what: trrs
         where:
           ref: fingers_inner_two
-          shift: [36, 0]
+          shift: [38, 0]
           rotate: -90
         params:
           reverse: true
@@ -220,28 +220,30 @@ pcbs:
       logo:
         what: utility_ergogen_logo
         where:
-          ref: fingers_inner_four
-          shift: [0, 0.8ky]
+          ref: fingers_inner_two
+          shift: [kx, 0]
       txtkipra:
         what: utility_text
         where:
           ref: fingers_ring_one
           shift: [0.5kx, -0.5ky-4]
         params:
+          face: Hack Nerd Font Mono
           reversible: true
-          text: "kipra by focusaurus"
           height: txtheight
           width: txtwidth
+          text: "kipra by focusaurus"
       txtv2:
         what: utility_text
         where:
           ref: fingers_index_one
           shift: [0, -0.5ky-4]
         params:
+          face: Hack Nerd Font Mono
           reversible: true
-          text: "v2 2024-07"
           height: txtheight
           width: txtwidth
+          text: "v2 2024-07"
       txtpragmatic:
         what: utility_text
         where:
@@ -249,8 +251,9 @@ pcbs:
           shift: [kx, -2.5ky]
           rotate: -35
         params:
+          face: Hack Nerd Font Mono
           reversible: true
-          text: "It's kinda pragmatic."
           height: txtheight
           width: txtwidth
+          text: "It's kinda pragmatic."
 preview: [main]
