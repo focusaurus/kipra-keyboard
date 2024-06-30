@@ -16,6 +16,8 @@ units:
   ky: cy
   stagger: 0.25ky
   bb: 7 # bind base
+  txtheight: 4
+  txtwidth: 2
 points:
   key:
     tags.1u: true
@@ -47,9 +49,9 @@ points:
         inner.key:
           column_net: P18
         inner.rows.one.skip: true
-        inner.rows.two.bind: [bb,30,bb+ky+stagger,bb]
-        inner.rows.three.bind: [bb,30,bb,bb]
-        inner.rows.four.bind: [bb+stagger,30,bb,bb]
+        inner.rows.two.bind: [bb,32,bb+ky+stagger,bb]
+        inner.rows.three.bind: [bb,32,bb,bb]
+        inner.rows.four.bind: [bb+stagger,32,bb,bb]
       rows:
         one:
           row_net: P9
@@ -222,19 +224,33 @@ pcbs:
       txtkipra:
         what: utility_text
         where:
-          ref: fingers_index_one
-          shift: [0, -ky]
+          ref: fingers_ring_one
+          shift: [0.5kx, -0.5ky-4]
         params:
           reversible: true
           text: "kipra by focusaurus"
-          height: 2
+          height: txtheight
+          width: txtwidth
       txtv2:
         what: utility_text
         where:
           ref: fingers_index_one
-          shift: [0, -1.5ky]
+          shift: [0, -0.5ky-4]
         params:
           reversible: true
           text: "v2 2024-07"
-          height: 2
+          height: txtheight
+          width: txtwidth
+      txtpragmatic:
+        what: utility_text
+        where:
+          ref: fingers_inner_two
+          shift: [kx, -2.5ky]
+          rotate: -35
+        params:
+          reversible: true
+          text: "It's kinda pragmatic."
+          height: txtheight
+          width: txtwidth
 preview: [main]
+
