@@ -188,7 +188,7 @@ pcbs:
           hotswap: false
           reverse: true
           keycaps: true
-          traces: true
+          traces: false
       diode:
         what: diode
         where: true
