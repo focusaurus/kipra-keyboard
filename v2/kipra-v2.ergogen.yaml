@@ -147,7 +147,7 @@ outlines:
       what: circle
       radius: 15
       where:
-        ref: fingers_middle_one
+        ref: fingers_middle_two
 cases:
   liner_template:
     - name: liner_shape
